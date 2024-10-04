@@ -20,6 +20,7 @@ contract MyToken {
     // public variables here
     string public tokenName = "SheeshGCoin";
     string public tokenAbbrv = "SGC";
+    string public supplyStatus = "";
     uint public totalSupply = 0;
 
     // mapping variable here
@@ -39,7 +40,10 @@ contract MyToken {
         if (balances[_myAddress] >= _myValue) {
             totalSupply -= _myValue;
             balances[_myAddress] -= _myValue;
-        } 
+            supplyStatus = "Supply Burned";
+        } else {
+            supplyStatus = "Not enough Supply to Burn";
+        }
         
     }
 
