@@ -32,6 +32,7 @@ contract MyToken {
     function addSupply (address _myAddress, uint _myValue) public {
         totalSupply += _myValue;
         balances[_myAddress] += _myValue;
+        supplyStatus = "Supply Successfully Added";
     }
     
     // burn function
